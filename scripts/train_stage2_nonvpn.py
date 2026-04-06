@@ -1,116 +1,144 @@
-import sys
 import os
+import sys
+
+import numpy as np
 import torch
 import torch.nn as nn
-import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader
 
-# 自动对齐项目根目录
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, '..'))
-sys.path.append(PROJECT_ROOT)
 
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
+
+from src.data_config import INDEX_PATH, PROCESS_DIR, get_label2_classes, load_registry_dataframe
 from src.dataset import ISCXStage2Dataset
 from src.models import VPNClassifier
-from src.utils import plot_metrics, save_confusion_matrix, generate_markdown_report, STAGE2_LABELS
+from src.utils import generate_markdown_report, plot_metrics, save_confusion_matrix
+
 
 def run_stage2_nonvpn():
-    # --- 1. 配置 ---
-    REPORT_DIR = os.path.join(PROJECT_ROOT, "report", "stage2_nonvpn")
-    PROCESS_DIR = os.path.join(PROJECT_ROOT, "data", "process")
-    
-    INDEX_PATH = os.path.join(PROJECT_ROOT, "samples_v2.npz")
-    os.makedirs(REPORT_DIR, exist_ok=True)
-    
-    DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    BATCH_SIZE = 512
-    EPOCHS = 50 
-    SEQ_LEN = 64 # [修改]
-    LR = 0.001
-    
-    # --- 2. 数据准备：筛选出 Non-VPN 流量 ---
-    print(f"📂 正在读取索引文件: {INDEX_PATH}")
-    index_data = np.load(INDEX_PATH, allow_pickle=True)
-    df_all = pd.DataFrame(index_data['data'], columns=index_data['columns'])
-    
-    # 仅保留 NonVPN 类别
-    df = df_all[df_all['label1'] == 'NonVPN'].copy()
-    df['row'] = df['row'].astype(int)
-    
-    print(f"📦 筛选完成：共 {len(df)} 个 Non-VPN 样本进行 5 分类训练")
+    report_dir = os.path.join(PROJECT_ROOT, "report", "stage2_nonvpn")
+    os.makedirs(report_dir, exist_ok=True)
 
-    # 分层抽样确保 5 个类别的比例一致
-    train_df, val_df = train_test_split(df, test_size=0.2, stratify=df['label2'], random_state=42)
-    
-    train_loader = DataLoader(ISCXStage2Dataset(train_df, PROCESS_DIR), 
-                              batch_size=BATCH_SIZE, shuffle=True, num_workers=8, pin_memory=True)
-    val_loader = DataLoader(ISCXStage2Dataset(val_df, PROCESS_DIR), 
-                             batch_size=BATCH_SIZE, shuffle=False)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    use_pin_memory = device.type == "cuda"
+    batch_size = 512
+    epochs = 50
+    lr = 0.001
+    num_workers = min(8, os.cpu_count() or 1)
 
-    # --- 3. 模型初始化 (7分类) ---
-    model = VPNClassifier(num_classes=5).to(DEVICE)
+    print(f"Loading sample index: {INDEX_PATH}")
+    df_all, _ = load_registry_dataframe(INDEX_PATH)
+
+    df = df_all[df_all["label1"] == "NonVPN"].copy()
+    label2_classes = get_label2_classes(df)
+    print(
+        f"Selected {len(df)} NonVPN samples for app classification across "
+        f"{len(label2_classes)} classes: {label2_classes}"
+    )
+
+    train_df, val_df = train_test_split(
+        df, test_size=0.2, stratify=df["label2"], random_state=42
+    )
+
+    train_set = ISCXStage2Dataset(
+        train_df, PROCESS_DIR, seq_len=64, label2_classes=label2_classes
+    )
+    val_set = ISCXStage2Dataset(
+        val_df, PROCESS_DIR, seq_len=64, label2_classes=label2_classes
+    )
+
+    train_loader = DataLoader(
+        train_set,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=num_workers,
+        pin_memory=use_pin_memory,
+    )
+    val_loader = DataLoader(
+        val_set,
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        pin_memory=use_pin_memory,
+    )
+
+    model = VPNClassifier(num_classes=len(label2_classes), seq_len=train_set.seq_len).to(
+        device
+    )
     criterion = nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=LR)
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
-    history = {'train_loss': [], 'val_loss': [], 'acc': []}
+    history = {"train_loss": [], "val_loss": [], "acc": []}
 
-    # --- 4. 训练循环 ---
-    print(f"🔥 Stage 2 (Non-VPN) 训练启动 | 设备: {DEVICE}")
-    for epoch in range(EPOCHS):
+    print(f"Training Stage 2 on {device}")
+    for epoch in range(epochs):
         model.train()
-        train_loss = 0
+        train_loss = 0.0
         for x_seq, x_stats, y in train_loader:
-            x_seq, x_stats, y = x_seq.to(DEVICE), x_stats.to(DEVICE), y.to(DEVICE)
-            
+            x_seq = x_seq.to(device)
+            x_stats = x_stats.to(device)
+            y = y.to(device)
+
             optimizer.zero_grad()
             out = model(x_seq, x_stats)
             loss = criterion(out, y)
             loss.backward()
             optimizer.step()
             train_loss += loss.item()
-        
-        # 验证逻辑
+
         model.eval()
-        y_true, y_pred, val_loss = [], [], 0
+        y_true, y_pred, val_loss = [], [], 0.0
         with torch.no_grad():
             for x_seq, x_stats, y in val_loader:
-                x_seq, x_stats, y = x_seq.to(DEVICE), x_stats.to(DEVICE), y.to(DEVICE)
+                x_seq = x_seq.to(device)
+                x_stats = x_stats.to(device)
+                y = y.to(device)
+
                 out = model(x_seq, x_stats)
                 val_loss += criterion(out, y).item()
-                
                 _, preds = torch.max(out, 1)
                 y_true.extend(y.cpu().numpy())
                 y_pred.extend(preds.cpu().numpy())
-        
-        # 计算指标
+
         avg_train_loss = train_loss / len(train_loader)
         avg_val_loss = val_loss / len(val_loader)
         accuracy = (np.array(y_true) == np.array(y_pred)).mean()
-        
-        history['train_loss'].append(avg_train_loss)
-        history['val_loss'].append(avg_val_loss)
-        history['acc'].append(accuracy)
-        
-        if (epoch + 1) % 5 == 0 or epoch == 0:
-            print(f"Epoch {epoch+1:02d}/{EPOCHS} | Val Acc: {accuracy:.4f} | Loss: {avg_train_loss:.4f}")
 
-    # --- 5. 生成报告 ---
-    print("\n" + "—"*30)
-    plot_metrics(history, REPORT_DIR)
-    
-    save_confusion_matrix(y_true, y_pred, REPORT_DIR, 
-                          labels=STAGE2_LABELS, 
-                          title='Stage 2: Non-VPN App Classification')
-    
-    generate_markdown_report(history, y_true, y_pred, REPORT_DIR, 
-                             target_names=STAGE2_LABELS, 
-                             stage_name="Stage 2 - Non-VPN Expert")
-    
-    model_path = os.path.join(REPORT_DIR, "stage2_nonvpn_expert.pth")
+        history["train_loss"].append(avg_train_loss)
+        history["val_loss"].append(avg_val_loss)
+        history["acc"].append(accuracy)
+
+        if (epoch + 1) % 5 == 0 or epoch == 0:
+            print(
+                f"Epoch {epoch + 1:02d}/{epochs} | "
+                f"Train Loss: {avg_train_loss:.4f} | Val Acc: {accuracy:.4f}"
+            )
+
+    plot_metrics(history, report_dir)
+    save_confusion_matrix(
+        y_true,
+        y_pred,
+        report_dir,
+        labels=label2_classes,
+        title="Stage 2: Non-VPN App Classification",
+    )
+    generate_markdown_report(
+        history,
+        y_true,
+        y_pred,
+        report_dir,
+        target_names=label2_classes,
+        stage_name="Stage 2 - Non-VPN App Classification",
+    )
+
+    model_path = os.path.join(report_dir, "stage2_nonvpn_expert.pth")
     torch.save(model.state_dict(), model_path)
-    print(f"💾 Non-VPN 专家权重已保存: {model_path}")
+    print(f"Saved model weights to: {model_path}")
+
 
 if __name__ == "__main__":
     run_stage2_nonvpn()

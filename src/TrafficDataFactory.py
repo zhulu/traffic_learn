@@ -22,15 +22,16 @@ class TrafficDataFactory:
         with open(self.config_path, "r", encoding="utf-8") as f:
             self.config = json.load(f)["datasets"]["iscx_vpn_nonvpn"]
 
+        self.project_root = os.path.dirname(os.path.dirname(self.config_path))
         self.raw_root = self._resolve_path(self.config["raw_root"])
-        self.output_dir = output_dir
+        self.output_dir = self._resolve_output_path(output_dir)
         self.max_pkts = max_pkts
         self.timeout = timeout
         self.app_label_path = self._resolve_path(
             app_label_path or os.path.join("data", "app_label.json")
         )
         self.flow_label_map = self._load_flow_label_map(self.app_label_path)
-        self.registry_path = "samples.npz"
+        self.registry_path = self._resolve_output_path("samples.npz")
         os.makedirs(self.output_dir, exist_ok=True)
 
     @staticmethod
@@ -42,16 +43,20 @@ class TrafficDataFactory:
             return path
 
         config_dir = os.path.dirname(self.config_path)
-        project_root = os.path.dirname(config_dir)
         candidates = [
             os.path.abspath(path),
             os.path.abspath(os.path.join(config_dir, path)),
-            os.path.abspath(os.path.join(project_root, path)),
+            os.path.abspath(os.path.join(self.project_root, path)),
         ]
         for candidate in candidates:
             if os.path.exists(candidate):
                 return candidate
         return candidates[-1]
+
+    def _resolve_output_path(self, path):
+        if os.path.isabs(path):
+            return path
+        return os.path.abspath(os.path.join(self.project_root, path))
 
     @staticmethod
     def _normalize_proto(proto):
@@ -305,5 +310,6 @@ class TrafficDataFactory:
 
 
 def load_sample_full(process_dir, npz_name, row_idx):
-    data = np.load(os.path.join(process_dir, npz_name))
+    data_path = npz_name if os.path.isabs(npz_name) else os.path.join(process_dir, npz_name)
+    data = np.load(data_path)
     return data["features"][row_idx], data["stats"][row_idx]

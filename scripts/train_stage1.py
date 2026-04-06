@@ -2,16 +2,18 @@ import os
 import sys
 
 import numpy as np
-import pandas as pd
 import torch
 import torch.nn as nn
 from sklearn.model_selection import train_test_split
 from torch.utils.data import DataLoader
 
+
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, ".."))
-sys.path.append(PROJECT_ROOT)
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
 
+from src.data_config import INDEX_PATH, PROCESS_DIR, load_registry_dataframe
 from src.dataset import ISCXStage1Dataset
 from src.models import VPNClassifier
 from src.utils import generate_markdown_report, plot_metrics, save_confusion_matrix
@@ -19,9 +21,6 @@ from src.utils import generate_markdown_report, plot_metrics, save_confusion_mat
 
 def run_experiment():
     report_dir = os.path.join(PROJECT_ROOT, "report")
-    process_dir = os.path.join(PROJECT_ROOT, "data", "process")
-    index_path = os.path.join(PROJECT_ROOT, "samples.npz")
-
     os.makedirs(report_dir, exist_ok=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -29,30 +28,30 @@ def run_experiment():
     batch_size = 512
     epochs = 50
     lr = 0.001
+    num_workers = min(8, os.cpu_count() or 1)
 
-    print(f"📂 正在读取索引文件: {index_path}")
-    index_data = np.load(index_path, allow_pickle=True)
-    df = pd.DataFrame(index_data["data"], columns=index_data["columns"])
-    df["row"] = df["row"].astype(int)
+    print(f"Loading sample index: {INDEX_PATH}")
+    df, _ = load_registry_dataframe(INDEX_PATH)
 
     train_df, val_df = train_test_split(
         df, test_size=0.2, stratify=df["label1"], random_state=42
     )
 
-    train_set = ISCXStage1Dataset(train_df, process_dir)
-    val_set = ISCXStage1Dataset(val_df, process_dir)
+    train_set = ISCXStage1Dataset(train_df, PROCESS_DIR)
+    val_set = ISCXStage1Dataset(val_df, PROCESS_DIR)
 
     train_loader = DataLoader(
         train_set,
         batch_size=batch_size,
         shuffle=True,
-        num_workers=8,
+        num_workers=num_workers,
         pin_memory=use_pin_memory,
     )
     val_loader = DataLoader(
         val_set,
         batch_size=batch_size,
         shuffle=False,
+        num_workers=num_workers,
         pin_memory=use_pin_memory,
     )
 
@@ -61,7 +60,7 @@ def run_experiment():
     weight_ratio = num_nonvpn / num_vpn
     pos_weight = torch.tensor([weight_ratio], dtype=torch.float32, device=device)
 
-    print(f"⚖️ 类别失衡补偿: VPN 样本权重调整为 {weight_ratio:.2f} 倍")
+    print(f"Class balancing enabled: VPN positive weight = {weight_ratio:.2f}")
 
     model = VPNClassifier(num_classes=1, seq_len=train_set.seq_len).to(device)
     criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
@@ -69,7 +68,7 @@ def run_experiment():
 
     history = {"train_loss": [], "val_loss": [], "acc": []}
 
-    print(f"🔥 训练开始 | 设备: {device} | 样本总数: {len(df)}")
+    print(f"Training Stage 1 on {device} with {len(df)} samples")
     for epoch in range(epochs):
         model.train()
         train_loss = 0.0
@@ -116,11 +115,18 @@ def run_experiment():
 
     plot_metrics(history, report_dir)
     save_confusion_matrix(y_true, y_pred, report_dir)
-    generate_markdown_report(history, y_true, y_pred, report_dir)
+    generate_markdown_report(
+        history,
+        y_true,
+        y_pred,
+        report_dir,
+        target_names=["NonVPN", "VPN"],
+        stage_name="Stage 1 - VPN Detection",
+    )
 
     model_path = os.path.join(report_dir, "stage1_vpn_detector.pth")
     torch.save(model.state_dict(), model_path)
-    print(f"💾 模型权重已保存: {model_path}")
+    print(f"Saved model weights to: {model_path}")
 
 
 if __name__ == "__main__":
