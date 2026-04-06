@@ -1,3 +1,4 @@
+import json
 import os
 
 import matplotlib.pyplot as plt
@@ -39,6 +40,32 @@ def save_confusion_matrix(
     label_indices = list(range(len(labels)))
     cm = confusion_matrix(y_true, y_pred, labels=label_indices)
 
+    csv_path = os.path.join(report_dir, "confusion_matrix.csv")
+    json_path = os.path.join(report_dir, "confusion_matrix.json")
+    with open(csv_path, "w", encoding="utf-8") as handle:
+        handle.write("actual/predicted," + ",".join(labels) + "\n")
+        for label, row in zip(labels, cm):
+            handle.write(label + "," + ",".join(str(int(value)) for value in row) + "\n")
+
+    with open(json_path, "w", encoding="utf-8") as handle:
+        rows = []
+        for label, row in zip(labels, cm):
+            rows.append(
+                {
+                    "actual_label": label,
+                    "predicted_counts": {
+                        pred_label: int(value) for pred_label, value in zip(labels, row)
+                    },
+                }
+            )
+        handle.write(
+            json.dumps(
+                {"labels": labels, "matrix": cm.tolist(), "rows": rows},
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+
     figsize = (7, 6) if len(labels) <= 2 else (11, 9)
     plt.figure(figsize=figsize)
     sns.heatmap(
@@ -57,6 +84,15 @@ def save_confusion_matrix(
     plt.tight_layout()
     plt.savefig(os.path.join(report_dir, "confusion_matrix.png"))
     plt.close()
+
+    print("Confusion matrix data:")
+    print("actual/predicted\t" + "\t".join(labels))
+    for label, row in zip(labels, cm):
+        print(label + "\t" + "\t".join(str(int(value)) for value in row))
+    print(f"Saved confusion matrix data to: {csv_path}")
+    print(f"Saved confusion matrix JSON to: {json_path}")
+
+    return cm
 
 
 def generate_markdown_report(
@@ -126,5 +162,9 @@ def generate_markdown_report(
         handle.write("![Learning Curves](./learning_curves.png)\n\n")
         handle.write("### Confusion Matrix\n")
         handle.write("![Confusion Matrix](./confusion_matrix.png)\n")
+        handle.write("\n")
+        handle.write("### Confusion Matrix Data\n")
+        handle.write("CSV: `./confusion_matrix.csv`\n\n")
+        handle.write("JSON: `./confusion_matrix.json`\n")
 
     print(f"Saved experiment report to: {report_path}")
