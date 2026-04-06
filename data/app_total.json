@@ -1,0 +1,1999 @@
+{
+  "application_total": [
+    "SSL",
+    "TLSv1.2",
+    "NBNS",
+    "LLMNR",
+    "TCP",
+    "DNS",
+    "NTP",
+    "TLSv1",
+    "UDP",
+    "SNMP",
+    "TLSv1.1",
+    "SSDP",
+    "MDNS",
+    "DB-LSP-DISC/JSON",
+    "BROWSER",
+    "DHCP",
+    "VNC",
+    "SRVLOC",
+    "OCSP",
+    "ICMP",
+    "STUN",
+    "? KNXnet/IP",
+    "DTLS",
+    "DTLSv1.0",
+    "GQUIC",
+    "SMB",
+    "SMB2",
+    "NBSS",
+    "LANMAN",
+    "ICMPv6",
+    "IPv6",
+    "HTTP/XML",
+    "HTTP/JSON",
+    "Elasticsearch",
+    "NXP 802.15.4 SNIFFER",
+    "SPOOLSS",
+    "DCERPC",
+    "FTP",
+    "SSLv2",
+    "SIP",
+    "IEEE 802.15.4",
+    "H1",
+    "LSD",
+    "X11",
+    "HTTP",
+    "RTMP",
+    "SSHv2",
+    "SSH",
+    "WireGuard",
+    "R-GOOSE",
+    "RTCP",
+    "Pathport",
+    "THRIFT",
+    "SSLv3",
+    "DCP-PFT",
+    "DCP-AF",
+    "XMPP/XML",
+    "BJNP",
+    "BitTorrent",
+    "ENIP",
+    "Chargen",
+    "NAT-PMP"
+  ],
+  "aim_chat_3a": {
+    "app": [
+      "SSL",
+      "TLSv1.2",
+      "NBNS",
+      "LLMNR",
+      "TCP",
+      "DNS",
+      "NTP",
+      "TLSv1",
+      "UDP"
+    ]
+  },
+  "aim_chat_3b": {
+    "app": [
+      "NBNS",
+      "LLMNR",
+      "SSL",
+      "TLSv1",
+      "SNMP",
+      "TCP",
+      "DNS"
+    ]
+  },
+  "AIMchat1": {
+    "app": [
+      "TLSv1",
+      "TLSv1.2",
+      "TLSv1.1",
+      "SSL",
+      "NBNS",
+      "LLMNR",
+      "UDP",
+      "DNS",
+      "NTP",
+      "TCP"
+    ]
+  },
+  "AIMchat2": {
+    "app": [
+      "TLSv1.1",
+      "TLSv1.2",
+      "DNS",
+      "NTP",
+      "SSL",
+      "NBNS",
+      "LLMNR",
+      "TCP",
+      "TLSv1",
+      "UDP"
+    ]
+  },
+  "email1a": {
+    "app": [
+      "UDP",
+      "SSDP",
+      "MDNS",
+      "NBNS",
+      "LLMNR",
+      "DB-LSP-DISC/JSON",
+      "NTP",
+      "BROWSER",
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "SNMP",
+      "DHCP",
+      "VNC",
+      "SRVLOC"
+    ]
+  },
+  "email1b": {
+    "app": [
+      "MDNS",
+      "UDP",
+      "NBNS",
+      "LLMNR",
+      "DB-LSP-DISC/JSON",
+      "NTP",
+      "SNMP",
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "OCSP",
+      "BROWSER",
+      "SSDP",
+      "TLSv1.2",
+      "DHCP",
+      "SRVLOC"
+    ]
+  },
+  "email2a": {
+    "app": [
+      "UDP",
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "ICMP",
+      "OCSP",
+      "NTP",
+      "MDNS"
+    ]
+  },
+  "email2b": {
+    "app": [
+      "UDP",
+      "TCP",
+      "DNS",
+      "ICMP",
+      "TLSv1",
+      "TLSv1.2",
+      "MDNS",
+      "NTP"
+    ]
+  },
+  "facebook_audio1a": {
+    "app": [
+      "TLSv1.2",
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "STUN",
+      "? KNXnet/IP",
+      "ICMP",
+      "DTLS",
+      "DTLSv1.0",
+      "BROWSER",
+      "SSDP",
+      "MDNS",
+      "NBNS"
+    ]
+  },
+  "facebook_audio1b": {
+    "app": [
+      "TLSv1.2",
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "STUN",
+      "DTLS",
+      "DTLSv1.0",
+      "ICMP",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "facebook_audio2a": {
+    "app": [
+      "TLSv1.2",
+      "DNS",
+      "ICMP",
+      "TCP",
+      "TLSv1",
+      "STUN",
+      "BROWSER",
+      "DTLS",
+      "DTLSv1.0",
+      "SSDP",
+      "NBNS",
+      "GQUIC",
+      "OCSP",
+      "SMB",
+      "SMB2",
+      "NBSS",
+      "LANMAN"
+    ]
+  },
+  "facebook_audio2b": {
+    "app": [
+      "TLSv1.2",
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "STUN",
+      "DTLS",
+      "DTLSv1.0",
+      "ICMP",
+      "GQUIC",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "facebook_audio3": {
+    "app": [
+      "UDP",
+      "STUN",
+      "ICMPv6",
+      "TLSv1.2",
+      "TCP",
+      "SSDP",
+      "ICMP",
+      "DNS",
+      "BROWSER",
+      "NBNS",
+      "LLMNR",
+      "IPv6",
+      "HTTP/XML",
+      "TLSv1",
+      "GQUIC",
+      "HTTP/JSON"
+    ]
+  },
+  "facebook_audio4": {
+    "app": [
+      "UDP",
+      "STUN",
+      "TLSv1.2",
+      "NBNS",
+      "LLMNR",
+      "SSDP",
+      "TCP",
+      "DB-LSP-DISC/JSON",
+      "DNS",
+      "MDNS",
+      "NTP",
+      "BROWSER",
+      "ICMP",
+      "DHCP",
+      "TLSv1",
+      "Elasticsearch",
+      "SSL",
+      "SRVLOC",
+      "NXP 802.15.4 SNIFFER",
+      "OCSP"
+    ]
+  },
+  "facebook_chat_4a": {
+    "app": [
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "NBNS",
+      "LLMNR",
+      "TLSv1.2",
+      "GQUIC",
+      "NTP",
+      "UDP"
+    ]
+  },
+  "facebook_chat_4b": {
+    "app": [
+      "SNMP",
+      "TLSv1.2",
+      "NBNS",
+      "LLMNR",
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "GQUIC",
+      "BROWSER"
+    ]
+  },
+  "facebook_video1a": {
+    "app": [
+      "BROWSER",
+      "DNS",
+      "TCP",
+      "ICMP",
+      "TLSv1.2",
+      "TLSv1",
+      "STUN",
+      "DTLS",
+      "DTLSv1.0",
+      "SSDP",
+      "NBNS"
+    ]
+  },
+  "facebook_video1b": {
+    "app": [
+      "UDP",
+      "STUN",
+      "ICMP",
+      "TCP",
+      "TLSv1.2",
+      "TLSv1",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "facebook_video2a": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "TLSv1",
+      "DNS",
+      "STUN",
+      "ICMP",
+      "DTLS",
+      "DTLSv1.0",
+      "NBNS",
+      "GQUIC",
+      "BROWSER",
+      "SSDP",
+      "SMB2",
+      "SPOOLSS",
+      "DCERPC",
+      "SMB"
+    ]
+  },
+  "facebook_video2b": {
+    "app": [
+      "TLSv1.2",
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "STUN",
+      "DTLS",
+      "DTLSv1.0",
+      "ICMP",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "facebookchat1": {
+    "app": [
+      "TLSv1.2",
+      "DNS",
+      "TCP"
+    ]
+  },
+  "facebookchat2": {
+    "app": [
+      "NBNS",
+      "DNS",
+      "TLSv1.2",
+      "GQUIC",
+      "LLMNR",
+      "TCP",
+      "TLSv1",
+      "UDP"
+    ]
+  },
+  "facebookchat3": {
+    "app": [
+      "TLSv1",
+      "TLSv1.1",
+      "TLSv1.2",
+      "DNS",
+      "SSL",
+      "UDP",
+      "TCP",
+      "LLMNR",
+      "NBNS"
+    ]
+  },
+  "ftps_down_1a": {
+    "app": [
+      "UDP",
+      "FTP",
+      "TCP",
+      "TLSv1",
+      "SSLv2",
+      "SIP",
+      "ICMPv6",
+      "IEEE 802.15.4",
+      "ICMP",
+      "H1",
+      "IPv6",
+      "NBNS",
+      "LLMNR",
+      "LSD",
+      "DNS",
+      "NTP",
+      "SSDP",
+      "DTLS"
+    ]
+  },
+  "ftps_down_1b": {
+    "app": [
+      "FTP",
+      "TCP",
+      "TLSv1",
+      "SIP",
+      "SNMP",
+      "UDP",
+      "DNS",
+      "NBNS",
+      "LLMNR",
+      "BROWSER",
+      "NTP"
+    ]
+  },
+  "ftps_up_2a": {
+    "app": [
+      "UDP",
+      "FTP",
+      "TCP",
+      "TLSv1",
+      "X11",
+      "ICMPv6",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "ftps_up_2b": {
+    "app": [
+      "NBNS",
+      "BROWSER",
+      "FTP",
+      "TCP",
+      "TLSv1",
+      "X11",
+      "UDP",
+      "LLMNR",
+      "SNMP"
+    ]
+  },
+  "gmailchat1": {
+    "app": [
+      "TLSv1.2",
+      "GQUIC",
+      "DNS",
+      "TCP",
+      "UDP",
+      "TLSv1",
+      "NTP",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "gmailchat2": {
+    "app": [
+      "TLSv1",
+      "DNS",
+      "TCP",
+      "UDP",
+      "TLSv1.2",
+      "GQUIC",
+      "NTP",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "gmailchat3": {
+    "app": [
+      "SSL",
+      "DNS",
+      "TCP",
+      "UDP",
+      "TLSv1.2",
+      "TLSv1",
+      "GQUIC",
+      "NBNS",
+      "LLMNR",
+      "TLSv1.1",
+      "NTP"
+    ]
+  },
+  "hangout_chat_4b": {
+    "app": [
+      "NBNS",
+      "LLMNR",
+      "UDP",
+      "SNMP",
+      "TCP",
+      "GQUIC",
+      "TLSv1.2",
+      "DNS",
+      "TLSv1",
+      "BROWSER"
+    ]
+  },
+  "hangouts_audio1a": {
+    "app": [
+      "UDP",
+      "STUN",
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "TLSv1.2",
+      "ICMP",
+      "BROWSER",
+      "SSDP",
+      "GQUIC",
+      "NBNS",
+      "MDNS"
+    ]
+  },
+  "hangouts_audio1b": {
+    "app": [
+      "TLSv1.2",
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "STUN",
+      "GQUIC",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "hangouts_audio2a": {
+    "app": [
+      "TCP",
+      "TLSv1",
+      "DNS",
+      "TLSv1.2",
+      "BROWSER",
+      "ICMP",
+      "STUN",
+      "GQUIC",
+      "SSDP",
+      "NBNS",
+      "SMB",
+      "SMB2",
+      "NBSS",
+      "LANMAN"
+    ]
+  },
+  "hangouts_audio2b": {
+    "app": [
+      "TLSv1.2",
+      "NBNS",
+      "LLMNR",
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "STUN",
+      "GQUIC",
+      "UDP"
+    ]
+  },
+  "hangouts_audio3": {
+    "app": [
+      "UDP",
+      "STUN",
+      "TLSv1.2",
+      "TCP",
+      "BROWSER",
+      "NBNS",
+      "DNS",
+      "LLMNR",
+      "ICMP",
+      "SSDP",
+      "TLSv1",
+      "HTTP/XML",
+      "GQUIC",
+      "HTTP/JSON"
+    ]
+  },
+  "hangouts_audio4": {
+    "app": [
+      "UDP",
+      "STUN",
+      "NBNS",
+      "LLMNR",
+      "DB-LSP-DISC/JSON",
+      "DNS",
+      "TLSv1.2",
+      "BROWSER",
+      "DHCP",
+      "NTP",
+      "SSDP",
+      "MDNS",
+      "ICMP",
+      "TCP",
+      "TLSv1",
+      "SRVLOC"
+    ]
+  },
+  "hangouts_chat_4a": {
+    "app": [
+      "UDP",
+      "GQUIC",
+      "TLSv1.2",
+      "TCP",
+      "TLSv1",
+      "NBNS",
+      "LLMNR",
+      "DNS",
+      "NTP",
+      "SSDP"
+    ]
+  },
+  "hangouts_video1b": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "DNS",
+      "STUN",
+      "TLSv1",
+      "NBNS",
+      "LLMNR",
+      "SSDP"
+    ]
+  },
+  "hangouts_video2a": {
+    "app": [
+      "TCP",
+      "DNS",
+      "TLSv1.2",
+      "TLSv1",
+      "SSDP",
+      "ICMP",
+      "STUN",
+      "BROWSER",
+      "GQUIC",
+      "NBNS",
+      "SMB",
+      "SMB2",
+      "NBSS",
+      "LANMAN",
+      "SPOOLSS",
+      "DCERPC"
+    ]
+  },
+  "hangouts_video2b": {
+    "app": [
+      "TLSv1.2",
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "STUN",
+      "SSLv2",
+      "NBNS",
+      "LLMNR",
+      "GQUIC"
+    ]
+  },
+  "icq_chat_3a": {
+    "app": [
+      "DNS",
+      "NTP",
+      "SSL",
+      "TLSv1",
+      "TLSv1.2",
+      "UDP",
+      "TCP",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "icq_chat_3b": {
+    "app": [
+      "NBNS",
+      "SSL",
+      "LLMNR",
+      "TLSv1",
+      "SNMP",
+      "TCP",
+      "BROWSER",
+      "DNS"
+    ]
+  },
+  "ICQchat1": {
+    "app": [
+      "SSL",
+      "TLSv1",
+      "TLSv1.2",
+      "TCP",
+      "TLSv1.1",
+      "DNS",
+      "NTP",
+      "NBNS",
+      "LLMNR",
+      "UDP"
+    ]
+  },
+  "ICQchat2": {
+    "app": [
+      "DNS",
+      "NTP",
+      "TLSv1",
+      "TLSv1.2",
+      "TLSv1.1",
+      "SSL",
+      "NBNS",
+      "LLMNR",
+      "TCP",
+      "UDP"
+    ]
+  },
+  "netflix1": {
+    "app": [
+      "TCP",
+      "HTTP/JSON",
+      "HTTP",
+      "DNS",
+      "HTTP/XML",
+      "ICMP",
+      "TLSv1",
+      "TLSv1.2",
+      "BROWSER",
+      "NBNS"
+    ]
+  },
+  "netflix2": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "BROWSER",
+      "NBNS",
+      "DNS",
+      "TLSv1",
+      "ICMP"
+    ]
+  },
+  "netflix3": {
+    "app": [
+      "TCP",
+      "TLSv1",
+      "NBNS",
+      "BROWSER",
+      "DNS",
+      "ICMP"
+    ]
+  },
+  "netflix4": {
+    "app": [
+      "TCP",
+      "HTTP/JSON",
+      "DNS",
+      "ICMP",
+      "TLSv1",
+      "TLSv1.2",
+      "BROWSER",
+      "NBNS"
+    ]
+  },
+  "scp1": {
+    "app": [
+      "NBNS",
+      "LLMNR",
+      "MDNS",
+      "TCP",
+      "NTP",
+      "DB-LSP-DISC/JSON",
+      "UDP",
+      "BROWSER",
+      "HTTP/XML",
+      "DNS",
+      "HTTP/JSON",
+      "RTMP",
+      "ICMP",
+      "SSHv2",
+      "SSH",
+      "TLSv1.2",
+      "SSDP",
+      "TLSv1",
+      "OCSP",
+      "DHCP",
+      "SRVLOC"
+    ]
+  },
+  "scpDown1": {
+    "app": [
+      "SSH",
+      "SSHv2",
+      "TCP",
+      "DNS",
+      "ICMP",
+      "TLSv1.2",
+      "BROWSER"
+    ]
+  },
+  "scpDown2": {
+    "app": [
+      "SSH",
+      "SSHv2",
+      "TCP",
+      "DNS"
+    ]
+  },
+  "scpDown3": {
+    "app": [
+      "SSH",
+      "SSHv2",
+      "TCP",
+      "DNS",
+      "ICMP"
+    ]
+  },
+  "scpDown4": {
+    "app": [
+      "DNS",
+      "SSHv2",
+      "TCP",
+      "SSH"
+    ]
+  },
+  "scpDown5": {
+    "app": [
+      "DNS",
+      "SSHv2",
+      "TCP",
+      "SSH"
+    ]
+  },
+  "scpDown6": {
+    "app": [
+      "DNS",
+      "SSHv2",
+      "TCP",
+      "SSH",
+      "ICMP"
+    ]
+  },
+  "scpUp1": {
+    "app": [
+      "DNS",
+      "SSHv2",
+      "TCP",
+      "SSH",
+      "ICMP"
+    ]
+  },
+  "scpUp2": {
+    "app": [
+      "DNS",
+      "SSHv2",
+      "TCP",
+      "SSH",
+      "ICMP"
+    ]
+  },
+  "scpUp3": {
+    "app": [
+      "DNS",
+      "SSHv2",
+      "TCP",
+      "SSH",
+      "ICMP"
+    ]
+  },
+  "scpUp5": {
+    "app": [
+      "DNS",
+      "SSHv2",
+      "TCP",
+      "SSH"
+    ]
+  },
+  "scpUp6": {
+    "app": [
+      "DNS",
+      "SSHv2",
+      "TCP",
+      "SSH",
+      "ICMP"
+    ]
+  },
+  "sftp1": {
+    "app": [
+      "TCP",
+      "TLSv1",
+      "BROWSER",
+      "FTP",
+      "DNS",
+      "SSDP",
+      "ICMP",
+      "NBNS"
+    ]
+  },
+  "sftp_down_3a": {
+    "app": [
+      "SSHv2",
+      "TCP",
+      "SSH",
+      "UDP"
+    ]
+  },
+  "sftp_down_3b": {
+    "app": [
+      "NBNS",
+      "DNS",
+      "SSH",
+      "LLMNR",
+      "TCP",
+      "SNMP"
+    ]
+  },
+  "sftp_up_2a": {
+    "app": [
+      "SSL",
+      "SSH",
+      "TCP",
+      "NBNS",
+      "LLMNR"
+    ]
+  },
+  "sftp_up_2b": {
+    "app": [
+      "SSHv2",
+      "TCP",
+      "SSH",
+      "NBNS",
+      "LLMNR",
+      "UDP",
+      "SNMP"
+    ]
+  },
+  "sftpDown1": {
+    "app": [
+      "TCP",
+      "SSHv2",
+      "SSH",
+      "DNS",
+      "ICMP",
+      "TLSv1",
+      "BROWSER"
+    ]
+  },
+  "sftpDown2": {
+    "app": [
+      "TLSv1.2",
+      "TCP",
+      "BROWSER",
+      "NBNS",
+      "SSHv2",
+      "SSH",
+      "DNS",
+      "ICMP"
+    ]
+  },
+  "sftpUp1": {
+    "app": [
+      "TCP",
+      "SSHv2",
+      "SSH",
+      "DNS",
+      "ICMP",
+      "BROWSER",
+      "NBNS"
+    ]
+  },
+  "skype_audio1a": {
+    "app": [
+      "TCP",
+      "TLSv1",
+      "UDP",
+      "WireGuard",
+      "R-GOOSE",
+      "RTCP",
+      "Pathport",
+      "THRIFT",
+      "BROWSER",
+      "DNS",
+      "ICMP",
+      "GQUIC",
+      "NBNS",
+      "MDNS",
+      "SMB2",
+      "SPOOLSS",
+      "DCERPC",
+      "SMB"
+    ]
+  },
+  "skype_audio1b": {
+    "app": [
+      "UDP",
+      "TLSv1",
+      "TCP",
+      "DNS",
+      "DHCP",
+      "NBNS",
+      "OCSP",
+      "SSDP",
+      "WireGuard",
+      "R-GOOSE",
+      "RTCP",
+      "Pathport",
+      "THRIFT",
+      "TLSv1.2",
+      "TLSv1.1",
+      "SSLv2",
+      "SSLv3"
+    ]
+  },
+  "skype_audio2a": {
+    "app": [
+      "TCP",
+      "WireGuard",
+      "DCP-PFT",
+      "R-GOOSE",
+      "RTCP",
+      "DCP-AF",
+      "UDP",
+      "TLSv1",
+      "NBNS",
+      "GQUIC",
+      "BROWSER",
+      "DNS",
+      "ICMP"
+    ]
+  },
+  "skype_audio2b": {
+    "app": [
+      "TCP",
+      "WireGuard",
+      "DCP-PFT",
+      "R-GOOSE",
+      "RTCP",
+      "DCP-AF",
+      "UDP",
+      "TLSv1",
+      "DNS",
+      "DHCP",
+      "NBNS",
+      "OCSP",
+      "SSLv2",
+      "SSLv3"
+    ]
+  },
+  "skype_audio3": {
+    "app": [
+      "UDP",
+      "WireGuard",
+      "RTCP",
+      "NBNS",
+      "LLMNR",
+      "MDNS",
+      "TLSv1",
+      "TCP",
+      "NTP",
+      "DB-LSP-DISC/JSON",
+      "SSDP",
+      "BROWSER",
+      "DHCP",
+      "ICMP",
+      "DCP-PFT",
+      "DCP-AF",
+      "THRIFT",
+      "SRVLOC"
+    ]
+  },
+  "skype_audio4": {
+    "app": [
+      "WireGuard",
+      "DCP-PFT",
+      "RTCP",
+      "DCP-AF",
+      "THRIFT",
+      "UDP",
+      "TCP",
+      "TLSv1",
+      "SSDP",
+      "ICMP",
+      "BROWSER",
+      "NBNS",
+      "DNS",
+      "TLSv1.2",
+      "LLMNR",
+      "HTTP/XML"
+    ]
+  },
+  "skype_chat1a": {
+    "app": [
+      "NBNS",
+      "LLMNR",
+      "UDP",
+      "TCP",
+      "SSDP",
+      "DB-LSP-DISC/JSON",
+      "TLSv1.2",
+      "TLSv1",
+      "BROWSER",
+      "MDNS",
+      "NTP",
+      "DHCP",
+      "SNMP",
+      "DNS",
+      "XMPP/XML",
+      "SRVLOC",
+      "OCSP",
+      "X11",
+      "SSLv2"
+    ]
+  },
+  "skype_chat1b": {
+    "app": [
+      "NBNS",
+      "LLMNR",
+      "DB-LSP-DISC/JSON",
+      "UDP",
+      "BROWSER",
+      "MDNS",
+      "TLSv1",
+      "NTP",
+      "TCP",
+      "SSDP",
+      "DHCP",
+      "SNMP",
+      "DNS",
+      "OCSP",
+      "SRVLOC",
+      "TLSv1.2"
+    ]
+  },
+  "skype_file1": {
+    "app": [
+      "UDP",
+      "TCP",
+      "HTTP",
+      "TLSv1",
+      "DNS",
+      "ICMP"
+    ]
+  },
+  "skype_file2": {
+    "app": [
+      "TLSv1",
+      "TCP",
+      "UDP",
+      "DNS",
+      "GQUIC",
+      "ICMP"
+    ]
+  },
+  "skype_file3": {
+    "app": [
+      "DCP-PFT",
+      "R-GOOSE",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "TCP",
+      "TLSv1",
+      "DNS",
+      "ICMP",
+      "GQUIC",
+      "MDNS",
+      "BROWSER",
+      "NBNS"
+    ]
+  },
+  "skype_file4": {
+    "app": [
+      "UDP",
+      "TCP",
+      "TLSv1",
+      "DNS"
+    ]
+  },
+  "skype_file5": {
+    "app": [
+      "TCP",
+      "UDP",
+      "TLSv1",
+      "RTCP",
+      "XMPP/XML"
+    ]
+  },
+  "skype_file6": {
+    "app": [
+      "TLSv1",
+      "TCP",
+      "DCP-PFT",
+      "R-GOOSE",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "TLSv1.2"
+    ]
+  },
+  "skype_file7": {
+    "app": [
+      "TLSv1",
+      "TCP",
+      "DCP-PFT",
+      "R-GOOSE",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "TLSv1.2",
+      "BROWSER",
+      "NBNS",
+      "ICMPv6",
+      "IPv6",
+      "ICMP",
+      "LLMNR",
+      "SSDP",
+      "DNS",
+      "OCSP",
+      "GQUIC",
+      "HTTP/XML",
+      "HTTP/JSON"
+    ]
+  },
+  "skype_file8": {
+    "app": [
+      "NBNS",
+      "LLMNR",
+      "BROWSER",
+      "MDNS",
+      "DHCP",
+      "DB-LSP-DISC/JSON",
+      "UDP",
+      "NTP",
+      "TCP",
+      "TLSv1",
+      "ICMP",
+      "SSDP",
+      "SRVLOC",
+      "DCP-PFT",
+      "R-GOOSE",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "BJNP",
+      "DNS"
+    ]
+  },
+  "skype_video1a": {
+    "app": [
+      "WireGuard",
+      "DCP-PFT",
+      "R-GOOSE",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "TCP",
+      "BROWSER",
+      "TLSv1",
+      "NBNS",
+      "NTP",
+      "ICMP",
+      "DNS",
+      "GQUIC"
+    ]
+  },
+  "skype_video1b": {
+    "app": [
+      "TCP",
+      "NBNS",
+      "DNS",
+      "OCSP",
+      "HTTP",
+      "TLSv1.2",
+      "WireGuard",
+      "DCP-PFT",
+      "R-GOOSE",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "TLSv1",
+      "DHCP"
+    ]
+  },
+  "skype_video2a": {
+    "app": [
+      "WireGuard",
+      "DCP-PFT",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "TCP",
+      "TLSv1.2",
+      "TLSv1",
+      "BROWSER",
+      "NBNS",
+      "DNS",
+      "GQUIC",
+      "ICMP",
+      "NTP"
+    ]
+  },
+  "skype_video2b": {
+    "app": [
+      "HTTP",
+      "WireGuard",
+      "DCP-PFT",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "TLSv1",
+      "TCP",
+      "DNS",
+      "DHCP",
+      "LLMNR",
+      "NBNS",
+      "SSLv2"
+    ]
+  },
+  "spotify1": {
+    "app": [
+      "TCP",
+      "UDP",
+      "DNS",
+      "HTTP/JSON",
+      "ICMP",
+      "TLSv1",
+      "TLSv1.1",
+      "BROWSER",
+      "NBNS"
+    ]
+  },
+  "spotify2": {
+    "app": [
+      "TCP",
+      "DNS",
+      "ICMP",
+      "UDP",
+      "NBNS",
+      "BROWSER",
+      "MDNS",
+      "TLSv1"
+    ]
+  },
+  "spotify3": {
+    "app": [
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "ICMP",
+      "UDP",
+      "TLSv1.1",
+      "BROWSER",
+      "NBNS",
+      "SMB2",
+      "SPOOLSS",
+      "DCERPC",
+      "SMB"
+    ]
+  },
+  "spotify4": {
+    "app": [
+      "TCP",
+      "DNS",
+      "ICMP",
+      "HTTP",
+      "TLSv1.1",
+      "UDP",
+      "BROWSER",
+      "TLSv1",
+      "NBNS",
+      "NTP",
+      "SSDP",
+      "SMB2",
+      "SPOOLSS",
+      "DCERPC",
+      "SMB"
+    ]
+  },
+  "vimeo1": {
+    "app": [
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "ICMP",
+      "TLSv1.2",
+      "BROWSER",
+      "SMB2",
+      "SPOOLSS",
+      "DCERPC",
+      "SMB",
+      "NBNS"
+    ]
+  },
+  "vimeo2": {
+    "app": [
+      "TCP",
+      "TLSv1",
+      "DNS",
+      "ICMP",
+      "TLSv1.2"
+    ]
+  },
+  "vimeo3": {
+    "app": [
+      "SSL",
+      "SSLv2",
+      "TLSv1.2",
+      "TCP",
+      "NBNS",
+      "DNS",
+      "TLSv1",
+      "ICMP",
+      "BROWSER",
+      "MDNS"
+    ]
+  },
+  "vimeo4": {
+    "app": [
+      "TLSv1.2",
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "ICMP",
+      "BROWSER",
+      "NBNS",
+      "SMB2",
+      "SPOOLSS",
+      "DCERPC",
+      "SMB"
+    ]
+  },
+  "voipbuster1b": {
+    "app": [
+      "UDP",
+      "ICMPv6",
+      "TCP",
+      "LSD",
+      "BitTorrent",
+      "ICMP",
+      "NBNS",
+      "LLMNR",
+      "ENIP",
+      "DNS",
+      "NTP",
+      "TLSv1",
+      "GQUIC"
+    ]
+  },
+  "voipbuster2b": {
+    "app": [
+      "UDP",
+      "NBNS",
+      "LLMNR",
+      "ICMPv6",
+      "SSDP",
+      "LSD",
+      "TCP",
+      "TLSv1",
+      "ICMP",
+      "DNS",
+      "NTP",
+      "BitTorrent",
+      "HTTP/XML"
+    ]
+  },
+  "voipbuster3b": {
+    "app": [
+      "UDP",
+      "NBNS",
+      "LLMNR",
+      "ICMPv6",
+      "TCP",
+      "LSD",
+      "ICMP",
+      "DNS"
+    ]
+  },
+  "voipbuster_4a": {
+    "app": [
+      "UDP",
+      "THRIFT",
+      "TCP",
+      "DNS",
+      "NBNS",
+      "LLMNR",
+      "TLSv1",
+      "NTP",
+      "Chargen",
+      "SSDP"
+    ]
+  },
+  "voipbuster_4b": {
+    "app": [
+      "UDP",
+      "THRIFT",
+      "NBNS",
+      "LLMNR",
+      "TCP",
+      "TLSv1",
+      "SNMP",
+      "DNS",
+      "BROWSER",
+      "Chargen",
+      "SSDP",
+      "NTP"
+    ]
+  },
+  "youtube1": {
+    "app": [
+      "TCP",
+      "OCSP",
+      "DNS",
+      "TLSv1",
+      "TLSv1.2",
+      "ICMP",
+      "MDNS",
+      "SSDP",
+      "NBNS",
+      "BROWSER"
+    ]
+  },
+  "youtube2": {
+    "app": [
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "OCSP",
+      "ICMP"
+    ]
+  },
+  "youtube3": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "DNS",
+      "TLSv1",
+      "SMB2",
+      "SPOOLSS",
+      "DCERPC",
+      "SMB",
+      "BROWSER",
+      "ICMP",
+      "OCSP",
+      "SSDP"
+    ]
+  },
+  "youtube4": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "DNS",
+      "TLSv1",
+      "OCSP",
+      "SMB2",
+      "ICMP",
+      "NBNS",
+      "BROWSER",
+      "SSDP"
+    ]
+  },
+  "youtube5": {
+    "app": [
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "ICMP",
+      "TLSv1.2",
+      "OCSP",
+      "UDP",
+      "BROWSER",
+      "SSDP",
+      "NBNS"
+    ]
+  },
+  "youtube6": {
+    "app": [
+      "DNS",
+      "TCP",
+      "TLSv1",
+      "ICMP",
+      "TLSv1.2",
+      "NBNS",
+      "BROWSER",
+      "SSDP"
+    ]
+  },
+  "youtubeHTML5_1": {
+    "app": [
+      "TCP",
+      "TLSv1",
+      "TLSv1.2",
+      "HTTP",
+      "DNS",
+      "BROWSER",
+      "ICMP",
+      "NBNS",
+      "MDNS",
+      "SMB2",
+      "SPOOLSS",
+      "DCERPC",
+      "SMB"
+    ]
+  },
+  "vpn_aim_chat1a": {
+    "app": [
+      "TLSv1",
+      "TCP",
+      "UDP",
+      "DNS"
+    ]
+  },
+  "vpn_aim_chat1b": {
+    "app": [
+      "TLSv1",
+      "SSL",
+      "TCP",
+      "DNS",
+      "ICMP",
+      "NTP"
+    ]
+  },
+  "vpn_bittorrent": {
+    "app": [
+      "NAT-PMP",
+      "SSDP",
+      "DNS",
+      "TCP",
+      "HTTP/XML",
+      "ICMP",
+      "UDP",
+      "SSLv3",
+      "HTTP/JSON",
+      "NTP"
+    ]
+  },
+  "vpn_email2a": {
+    "app": [
+      "NTP",
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "OCSP",
+      "ICMP"
+    ]
+  },
+  "vpn_email2b": {
+    "app": [
+      "TCP",
+      "DNS",
+      "ICMP",
+      "TLSv1",
+      "OCSP",
+      "TLSv1.2"
+    ]
+  },
+  "vpn_facebook_audio2": {
+    "app": [
+      "TLSv1.2",
+      "DNS",
+      "ICMP",
+      "TCP",
+      "TLSv1",
+      "STUN",
+      "SSLv3",
+      "OCSP"
+    ]
+  },
+  "vpn_facebook_chat1a": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "DNS",
+      "ICMP",
+      "TLSv1",
+      "UDP",
+      "OCSP",
+      "NTP"
+    ]
+  },
+  "vpn_facebook_chat1b": {
+    "app": [
+      "DNS",
+      "TLSv1.2",
+      "ICMP",
+      "TCP",
+      "TLSv1"
+    ]
+  },
+  "vpn_ftps_A": {
+    "app": [
+      "TLSv1.2",
+      "TCP",
+      "DNS",
+      "FTP",
+      "SSLv3",
+      "ICMP",
+      "TLSv1",
+      "GQUIC"
+    ]
+  },
+  "vpn_ftps_B": {
+    "app": [
+      "TLSv1.2",
+      "DNS",
+      "FTP",
+      "TCP",
+      "SSLv3",
+      "ICMP",
+      "GQUIC",
+      "TLSv1",
+      "SSLv2"
+    ]
+  },
+  "vpn_hangouts_audio1": {
+    "app": [
+      "TCP",
+      "DNS",
+      "TLSv1",
+      "TLSv1.2",
+      "STUN",
+      "ICMP",
+      "OCSP"
+    ]
+  },
+  "vpn_hangouts_audio2": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "DNS",
+      "ICMP",
+      "TLSv1",
+      "HTTP/JSON",
+      "TLSv1.1",
+      "OCSP",
+      "STUN",
+      "SSLv3"
+    ]
+  },
+  "vpn_hangouts_chat1a": {
+    "app": [
+      "TLSv1.2",
+      "DNS",
+      "ICMP",
+      "TCP",
+      "TLSv1",
+      "OCSP"
+    ]
+  },
+  "vpn_hangouts_chat1b": {
+    "app": [
+      "DNS",
+      "TLSv1.2",
+      "TCP",
+      "TLSv1",
+      "ICMP",
+      "NTP"
+    ]
+  },
+  "vpn_icq_chat1a": {
+    "app": [
+      "SSL",
+      "TCP",
+      "TLSv1",
+      "UDP",
+      "NTP",
+      "DNS"
+    ]
+  },
+  "vpn_icq_chat1b": {
+    "app": [
+      "SSL",
+      "TCP"
+    ]
+  },
+  "vpn_netflix_A": {
+    "app": [
+      "TCP",
+      "DNS",
+      "HTTP/JSON",
+      "HTTP",
+      "TLSv1",
+      "GQUIC",
+      "DB-LSP-DISC/JSON",
+      "ICMP"
+    ]
+  },
+  "vpn_sftp_A": {
+    "app": [
+      "TLSv1.2",
+      "SSHv2",
+      "TCP",
+      "SSH",
+      "DNS",
+      "ICMP",
+      "GQUIC",
+      "TLSv1"
+    ]
+  },
+  "vpn_sftp_B": {
+    "app": [
+      "TLSv1.2",
+      "TCP",
+      "SSH",
+      "DNS",
+      "GQUIC",
+      "TLSv1",
+      "ICMP",
+      "SSHv2"
+    ]
+  },
+  "vpn_skype_audio1": {
+    "app": [
+      "TCP",
+      "WireGuard",
+      "DCP-PFT",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "ICMP",
+      "TLSv1",
+      "DNS"
+    ]
+  },
+  "vpn_skype_audio2": {
+    "app": [
+      "TCP",
+      "TLSv1",
+      "TLSv1.2",
+      "DNS",
+      "ICMP",
+      "WireGuard",
+      "DCP-PFT",
+      "RTCP",
+      "DCP-AF",
+      "Pathport",
+      "THRIFT",
+      "UDP",
+      "OCSP",
+      "SSLv3"
+    ]
+  },
+  "vpn_skype_chat1a": {
+    "app": [
+      "TCP",
+      "TLSv1",
+      "UDP",
+      "DNS",
+      "ICMP"
+    ]
+  },
+  "vpn_skype_chat1b": {
+    "app": [
+      "TLSv1",
+      "TCP",
+      "UDP",
+      "NTP"
+    ]
+  },
+  "vpn_skype_files1a": {
+    "app": [
+      "TCP",
+      "UDP",
+      "TLSv1",
+      "ICMP",
+      "NTP",
+      "DNS",
+      "RTCP"
+    ]
+  },
+  "vpn_skype_files1b": {
+    "app": [
+      "UDP",
+      "RTCP",
+      "ICMP",
+      "TCP",
+      "TLSv1",
+      "NTP",
+      "DNS",
+      "SSDP",
+      "OCSP"
+    ]
+  },
+  "vpn_spotify_A": {
+    "app": [
+      "TCP",
+      "UDP",
+      "DNS",
+      "HTTP/JSON",
+      "TLSv1",
+      "TLSv1.1",
+      "DB-LSP-DISC/JSON",
+      "ICMP",
+      "GQUIC",
+      "HTTP/XML"
+    ]
+  },
+  "vpn_vimeo_A": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "DNS",
+      "TLSv1",
+      "DB-LSP-DISC/JSON",
+      "ICMP",
+      "UDP",
+      "GQUIC"
+    ]
+  },
+  "vpn_vimeo_B": {
+    "app": [
+      "TCP",
+      "TLSv1.2",
+      "TLSv1",
+      "SSLv2",
+      "DB-LSP-DISC/JSON",
+      "UDP",
+      "DNS",
+      "ICMP",
+      "GQUIC"
+    ]
+  },
+  "vpn_voipbuster1a": {
+    "app": [
+      "UDP",
+      "THRIFT",
+      "NBNS",
+      "LLMNR",
+      "DNS",
+      "NTP",
+      "TCP",
+      "TLSv1",
+      "OCSP"
+    ]
+  },
+  "vpn_voipbuster1b": {
+    "app": [
+      "UDP",
+      "THRIFT",
+      "NBNS",
+      "LLMNR",
+      "DNS",
+      "BROWSER",
+      "NTP",
+      "TCP",
+      "TLSv1",
+      "ICMP",
+      "DHCP"
+    ]
+  },
+  "vpn_youtube_A": {
+    "app": [
+      "UDP",
+      "TCP",
+      "TLSv1.2",
+      "DB-LSP-DISC/JSON",
+      "TLSv1",
+      "DNS",
+      "GQUIC",
+      "ICMP",
+      "SSLv2"
+    ]
+  }
+}

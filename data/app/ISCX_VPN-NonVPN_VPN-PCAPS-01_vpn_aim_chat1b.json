@@ -1,0 +1,124 @@
+[
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:44917",
+            "dst": "205.188.12.43:443",
+            "proto": "TCP"
+        },
+        "application": [
+            "TLSv1"
+        ],
+        "packet_count": 1108
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:48410",
+            "dst": "178.237.19.227:443",
+            "proto": "TCP"
+        },
+        "application": [
+            "SSL"
+        ],
+        "packet_count": 70
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:34342",
+            "dst": "178.237.18.202:443",
+            "proto": "TCP"
+        },
+        "application": [
+            "SSL"
+        ],
+        "packet_count": 68
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:42784",
+            "dst": "64.12.104.73:443",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP"
+        ],
+        "packet_count": 6
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:38929",
+            "dst": "64.12.27.66:443",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP"
+        ],
+        "packet_count": 7
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:62277",
+            "dst": "198.7.63.141:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:62277",
+            "dst": "78.46.223.24:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:30362",
+            "dst": "198.7.63.141:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130,78.46.223.24:53",
+            "dst": "78.46.223.24,10.8.8.130:62277",
+            "proto": "Other"
+        },
+        "application": [
+            "ICMP"
+        ],
+        "packet_count": 1
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:43819",
+            "dst": "137.116.224.167:443",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 19
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:38602",
+            "dst": "67.18.187.111:123",
+            "proto": "UDP"
+        },
+        "application": [
+            "NTP"
+        ],
+        "packet_count": 2
+    }
+]

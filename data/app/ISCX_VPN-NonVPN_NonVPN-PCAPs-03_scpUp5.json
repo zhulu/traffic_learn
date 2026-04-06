@@ -1,0 +1,169 @@
+[
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:45031",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:48442",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:44482",
+            "dst": "131.202.240.72:22",
+            "proto": "TCP"
+        },
+        "application": [
+            "SSHv2",
+            "TCP",
+            "SSH"
+        ],
+        "packet_count": 170
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:11447",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:1910",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:2208",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:25821",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:54024",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:5070",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:22044",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:25488",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:17857",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:4768",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:25563",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.150:14308",
+            "dst": "131.202.244.5:53",
+            "proto": "UDP"
+        },
+        "application": [
+            "DNS"
+        ],
+        "packet_count": 2
+    }
+]

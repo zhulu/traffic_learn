@@ -1,0 +1,757 @@
+[
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:137",
+            "dst": "131.202.243.255:137",
+            "proto": "UDP"
+        },
+        "application": [
+            "NBNS"
+        ],
+        "packet_count": 13
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:138",
+            "dst": "131.202.243.255:138",
+            "proto": "UDP"
+        },
+        "application": [
+            "BROWSER"
+        ],
+        "packet_count": 1
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:138",
+            "dst": "131.202.240.64:138",
+            "proto": "UDP"
+        },
+        "application": [
+            "BROWSER"
+        ],
+        "packet_count": 1
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:21",
+            "dst": "131.202.240.87:6059",
+            "proto": "TCP"
+        },
+        "application": [
+            "FTP",
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 349
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52847",
+            "dst": "131.202.240.87:6060",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "X11"
+        ],
+        "packet_count": 281
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52848",
+            "dst": "131.202.240.87:6061",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "X11"
+        ],
+        "packet_count": 13
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52849",
+            "dst": "131.202.240.87:6062",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "X11"
+        ],
+        "packet_count": 16
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52850",
+            "dst": "131.202.240.87:6063",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "X11"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52851",
+            "dst": "131.202.240.87:6064",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 16
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52852",
+            "dst": "131.202.240.87:6065",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52853",
+            "dst": "131.202.240.87:6066",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 17
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52854",
+            "dst": "131.202.240.87:6067",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52855",
+            "dst": "131.202.240.87:6068",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP"
+        ],
+        "packet_count": 1565
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52856",
+            "dst": "131.202.240.87:6069",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:19414",
+            "dst": "77.72.169.132:11113",
+            "proto": "UDP"
+        },
+        "application": [
+            "UDP"
+        ],
+        "packet_count": 8
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52857",
+            "dst": "131.202.240.87:6070",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 1510
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52858",
+            "dst": "131.202.240.87:6071",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52859",
+            "dst": "131.202.240.87:6072",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 136
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52860",
+            "dst": "131.202.240.87:6073",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52861",
+            "dst": "131.202.240.87:6074",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 154
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52862",
+            "dst": "131.202.240.87:6075",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52863",
+            "dst": "131.202.240.87:6076",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 1229
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52864",
+            "dst": "131.202.240.87:6077",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52865",
+            "dst": "131.202.240.87:6078",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 3112
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52866",
+            "dst": "131.202.240.87:6079",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52867",
+            "dst": "131.202.240.87:6080",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 226
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52868",
+            "dst": "131.202.240.87:6081",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52869",
+            "dst": "131.202.240.87:6082",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 2122
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52870",
+            "dst": "131.202.240.87:6083",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:61750",
+            "dst": "224.0.0.252:5355",
+            "proto": "UDP"
+        },
+        "application": [
+            "LLMNR"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52131",
+            "dst": "224.0.0.252:5355",
+            "proto": "UDP"
+        },
+        "application": [
+            "LLMNR"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52871",
+            "dst": "131.202.240.87:6084",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP"
+        ],
+        "packet_count": 49822
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52872",
+            "dst": "131.202.6.26:13111",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP"
+        ],
+        "packet_count": 11
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:21",
+            "dst": "131.202.240.87:6086",
+            "proto": "TCP"
+        },
+        "application": [
+            "FTP",
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 37
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52873",
+            "dst": "131.202.240.87:6087",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 68
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52874",
+            "dst": "131.202.240.87:6088",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:64918",
+            "dst": "131.202.240.45:161",
+            "proto": "UDP"
+        },
+        "application": [
+            "SNMP"
+        ],
+        "packet_count": 24
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52875",
+            "dst": "131.202.240.87:6089",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52876",
+            "dst": "131.202.240.87:6090",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52877",
+            "dst": "131.202.240.87:6091",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 853
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52878",
+            "dst": "131.202.240.87:6092",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52879",
+            "dst": "131.202.240.87:6093",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 112
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52880",
+            "dst": "131.202.240.87:6094",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52881",
+            "dst": "131.202.240.87:6095",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 215
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52882",
+            "dst": "131.202.240.87:6096",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52883",
+            "dst": "131.202.240.87:6097",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 406
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52884",
+            "dst": "131.202.240.87:6098",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52885",
+            "dst": "131.202.240.87:6099",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 1637
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52886",
+            "dst": "131.202.240.87:6100",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 15
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52887",
+            "dst": "131.202.240.87:6101",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 128
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:51544",
+            "dst": "224.0.0.252:5355",
+            "proto": "UDP"
+        },
+        "application": [
+            "LLMNR"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:59766",
+            "dst": "224.0.0.252:5355",
+            "proto": "UDP"
+        },
+        "application": [
+            "LLMNR"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52888",
+            "dst": "131.202.240.87:6102",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 15
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52889",
+            "dst": "131.202.240.87:6103",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 1177
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52890",
+            "dst": "131.202.6.26:13111",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP"
+        ],
+        "packet_count": 10
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52891",
+            "dst": "131.202.240.87:6104",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 15
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52892",
+            "dst": "131.202.240.87:6105",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 27506
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52893",
+            "dst": "131.202.240.87:6106",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 15
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52894",
+            "dst": "131.202.240.87:6107",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 14
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52895",
+            "dst": "131.202.240.87:6108",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 15
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52896",
+            "dst": "131.202.240.87:6109",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 34
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52897",
+            "dst": "131.202.240.87:6110",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP",
+            "TLSv1"
+        ],
+        "packet_count": 15
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:52927",
+            "dst": "224.0.0.252:5355",
+            "proto": "UDP"
+        },
+        "application": [
+            "LLMNR"
+        ],
+        "packet_count": 2
+    },
+    {
+        "five_tuple": {
+            "src": "131.202.240.242:51972",
+            "dst": "224.0.0.252:5355",
+            "proto": "UDP"
+        },
+        "application": [
+            "LLMNR"
+        ],
+        "packet_count": 2
+    }
+]

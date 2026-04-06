@@ -1,0 +1,24 @@
+[
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:34342",
+            "dst": "178.237.18.202:443",
+            "proto": "TCP"
+        },
+        "application": [
+            "SSL"
+        ],
+        "packet_count": 3673
+    },
+    {
+        "five_tuple": {
+            "src": "10.8.8.130:48410",
+            "dst": "178.237.19.227:443",
+            "proto": "TCP"
+        },
+        "application": [
+            "TCP"
+        ],
+        "packet_count": 8
+    }
+]
