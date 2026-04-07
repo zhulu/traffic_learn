@@ -30,7 +30,7 @@ class TrafficDataFactory:
         self.app_label_path = self._resolve_path(
             app_label_path or os.path.join("data", "app_label.json")
         )
-        self.flow_label_map = self._load_flow_label_map(self.app_label_path)
+        self.flow_filter_map = self._load_flow_filter_map(self.app_label_path)
         self.registry_path = self._resolve_output_path("samples.npz")
         os.makedirs(self.output_dir, exist_ok=True)
 
@@ -107,36 +107,44 @@ class TrafficDataFactory:
             return None
         return cls._build_flow_key(src[0], src[1], dst[0], dst[1], proto)
 
-    def _load_flow_label_map(self, app_label_path):
+    def _load_flow_filter_map(self, app_label_path):
         with open(app_label_path, "r", encoding="utf-8") as f:
             payload = json.load(f)
 
         files = payload.get("files", {})
-        flow_label_map = {}
+        flow_filter_map = {}
 
         for stem, label_groups in files.items():
             stem_map = {}
+            seen_flow_labels = {}
             for label2, items in label_groups.items():
+                flow_keys = set()
                 for item in items:
                     flow_key = self._normalize_labeled_flow(item)
                     if flow_key is None:
                         continue
 
-                    existed = stem_map.get(flow_key)
+                    existed = seen_flow_labels.get(flow_key)
                     if existed is not None and existed != label2:
                         raise ValueError(
                             f"Conflicting labels for {stem} {flow_key}: {existed} vs {label2}"
                         )
-                    stem_map[flow_key] = label2
-            flow_label_map[stem] = stem_map
+                    seen_flow_labels[flow_key] = label2
+                    flow_keys.add(flow_key)
 
-        return flow_label_map
+                if flow_keys:
+                    stem_map[label2] = flow_keys
+            flow_filter_map[stem] = stem_map
+
+        return flow_filter_map
 
     def _extract_pcap_logic(self, file_info):
         pcap_path = os.path.join(self.raw_root, file_info["relative_path"])
         stem = file_info["stem"]
-        labeled_flows = self.flow_label_map.get(stem, {})
-        if not labeled_flows:
+        target_label2 = file_info["label2"]
+        labeled_groups = self.flow_filter_map.get(stem, {})
+        target_flows = labeled_groups.get(target_label2, set())
+        if not target_flows:
             return None
 
         flows = {}
@@ -151,8 +159,7 @@ class TrafficDataFactory:
                     flow_key = self._build_flow_key(
                         src_ip, src_port, dst_ip, dst_port, pkt.proto
                     )
-                    label2 = labeled_flows.get(flow_key)
-                    if label2 is None:
+                    if flow_key not in target_flows:
                         continue
 
                     ts = float(pkt.time)
@@ -163,7 +170,6 @@ class TrafficDataFactory:
                             "start": ts,
                             "last": ts,
                             "pkts": [],
-                            "label2": label2,
                         }
 
                     if ts - flows[flow_key]["start"] > self.timeout:
@@ -176,7 +182,6 @@ class TrafficDataFactory:
 
             data_list = []
             stats_list = []
-            label2_list = []
 
             for info in flows.values():
                 pkts = info["pkts"]
@@ -207,7 +212,6 @@ class TrafficDataFactory:
 
                 data_list.append(np.array(mat, dtype=np.float32))
                 stats_list.append(np.array(flow_stats, dtype=np.float32))
-                label2_list.append(info["label2"])
 
             if data_list:
                 save_path = os.path.join(self.output_dir, f"{stem}.npz")
@@ -217,7 +221,7 @@ class TrafficDataFactory:
                     stats=np.array(stats_list),
                 )
 
-                count = len(label2_list)
+                count = len(data_list)
                 del flows, data_list, stats_list
                 gc.collect()
 
@@ -225,9 +229,9 @@ class TrafficDataFactory:
                     "stem": stem,
                     "count": count,
                     "label1": file_info["label1"],
+                    "label2": target_label2,
                     "label3": file_info.get("label3", ""),
                     "label1_label3": file_info.get("label1_label3", ""),
-                    "label2_list": label2_list,
                 }
         except Exception as e:
             print(f"Error processing {stem}: {e}")
@@ -254,16 +258,16 @@ class TrafficDataFactory:
                     try:
                         res = future.result()
                         if res:
-                            for i, label2 in enumerate(res["label2_list"]):
-                                label1_label2 = (
-                                    f"{res['label1']}_{self._label_to_key(label2)}"
-                                )
+                            label1_label2 = (
+                                f"{res['label1']}_{self._label_to_key(res['label2'])}"
+                            )
+                            for i in range(res["count"]):
                                 sample_registry.append(
                                     [
                                         f"{res['stem']}.npz",
                                         i,
                                         res["label1"],
-                                        label2,
+                                        res["label2"],
                                         res["label3"],
                                         label1_label2,
                                         res["label1_label3"],
@@ -273,10 +277,9 @@ class TrafficDataFactory:
                             stats_info["label1"][res["label1"]] = (
                                 stats_info["label1"].get(res["label1"], 0) + res["count"]
                             )
-                            for label2 in res["label2_list"]:
-                                stats_info["label2"][label2] = (
-                                    stats_info["label2"].get(label2, 0) + 1
-                                )
+                            stats_info["label2"][res["label2"]] = (
+                                stats_info["label2"].get(res["label2"], 0) + res["count"]
+                            )
 
                             pbar.set_postfix({"file": curr_stem[:10], "samples": res["count"]})
                     except Exception as e:

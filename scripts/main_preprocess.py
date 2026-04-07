@@ -27,9 +27,9 @@ def main():
     factory.registry_path = registry_file
 
     print("=" * 50)
-    print("Starting packet-level preprocessing with five-tuple labels")
+    print("Starting packet-level preprocessing with file-truth labels and flow filters")
     print(f"Label config: {config_path}")
-    print(f"Five-tuple label file: {app_label_path}")
+    print(f"Five-tuple flow filter file: {app_label_path}")
     print(f"Output feature dir: {process_dir}")
     print(f"Registry file: {registry_file}")
     print("=" * 50)

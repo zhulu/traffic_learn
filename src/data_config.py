@@ -23,6 +23,21 @@ DEFAULT_APP_LABEL_ORDER = [
 ]
 
 
+def _ordered_labels(labels, preferred_order=None):
+    ordered = []
+    preferred_order = preferred_order or []
+
+    for label in preferred_order:
+        if label in labels and label not in ordered:
+            ordered.append(label)
+
+    for label in sorted(set(labels)):
+        if label not in ordered:
+            ordered.append(label)
+
+    return ordered
+
+
 def load_registry_dataframe(index_path=INDEX_PATH):
     index_data = np.load(index_path, allow_pickle=True)
     df = pd.DataFrame(index_data["data"], columns=index_data["columns"])
@@ -50,16 +65,16 @@ def get_label2_classes(dataframe=None, app_label_path=APP_LABEL_PATH):
         label_counts = summary.get("label_flow_counts", {})
         labels.extend(label_counts.keys())
 
-    ordered = []
-    for label in DEFAULT_APP_LABEL_ORDER:
-        if label in labels and label not in ordered:
-            ordered.append(label)
+    return _ordered_labels(labels, preferred_order=DEFAULT_APP_LABEL_ORDER)
 
-    for label in sorted(set(labels)):
-        if label not in ordered:
-            ordered.append(label)
 
-    return ordered
+def get_label3_classes(dataframe, min_count=1):
+    if dataframe is None or "label3" not in dataframe.columns:
+        return []
+
+    counts = dataframe["label3"].dropna().astype(str).value_counts()
+    labels = counts[counts >= min_count].index.tolist()
+    return _ordered_labels(labels)
 
 
 def build_label_map(labels):

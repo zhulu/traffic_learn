@@ -1,3 +1,4 @@
+import argparse
 import os
 import sys
 
@@ -13,30 +14,55 @@ PROJECT_ROOT = os.path.abspath(os.path.join(CURRENT_DIR, ".."))
 if PROJECT_ROOT not in sys.path:
     sys.path.append(PROJECT_ROOT)
 
-from src.data_config import INDEX_PATH, PROCESS_DIR, get_label2_classes, load_registry_dataframe
+from src.data_config import (
+    INDEX_PATH,
+    LABEL1_LABELS,
+    PROCESS_DIR,
+    get_label2_classes,
+    load_registry_dataframe,
+)
 from src.dataset import ISCXStage2Dataset
 from src.models import VPNClassifier
 from src.utils import generate_markdown_report, plot_metrics, save_confusion_matrix
 
 
-def run_stage2_nonvpn():
-    report_dir = os.path.join(PROJECT_ROOT, "report", "stage2_nonvpn")
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Train Stage 2 business classifier for a selected label1 branch."
+    )
+    parser.add_argument(
+        "--label1",
+        choices=LABEL1_LABELS,
+        default="NonVPN",
+        help="Train the Stage 2 expert for VPN or NonVPN.",
+    )
+    parser.add_argument("--epochs", type=int, default=50, help="Training epochs.")
+    parser.add_argument("--batch-size", type=int, default=512, help="Batch size.")
+    return parser.parse_args()
+
+
+def run_stage2(label1="NonVPN", epochs=50, batch_size=512):
+    label1_slug = str(label1).strip().lower()
+    report_dir = os.path.join(PROJECT_ROOT, "report", f"stage2_{label1_slug}")
     os.makedirs(report_dir, exist_ok=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     use_pin_memory = device.type == "cuda"
-    batch_size = 512
-    epochs = 50
     lr = 0.001
     num_workers = min(8, os.cpu_count() or 1)
 
     print(f"Loading sample index: {INDEX_PATH}")
     df_all, _ = load_registry_dataframe(INDEX_PATH)
 
-    df = df_all[df_all["label1"] == "NonVPN"].copy()
+    df = df_all[df_all["label1"] == label1].copy()
     label2_classes = get_label2_classes(df)
+    if len(label2_classes) < 2:
+        raise ValueError(
+            f"Stage 2 requires at least 2 label2 classes under {label1}, got {label2_classes}"
+        )
+
     print(
-        f"Selected {len(df)} NonVPN samples for app classification across "
+        f"Selected {len(df)} {label1} samples for business classification across "
         f"{len(label2_classes)} classes: {label2_classes}"
     )
 
@@ -74,7 +100,7 @@ def run_stage2_nonvpn():
 
     history = {"train_loss": [], "val_loss": [], "acc": []}
 
-    print(f"Training Stage 2 on {device}")
+    print(f"Training Stage 2 ({label1}) on {device}")
     for epoch in range(epochs):
         model.train()
         train_loss = 0.0
@@ -124,7 +150,7 @@ def run_stage2_nonvpn():
         y_pred,
         report_dir,
         labels=label2_classes,
-        title="Stage 2: Non-VPN App Classification",
+        title=f"Stage 2: {label1} Business Classification",
     )
     generate_markdown_report(
         history,
@@ -132,13 +158,14 @@ def run_stage2_nonvpn():
         y_pred,
         report_dir,
         target_names=label2_classes,
-        stage_name="Stage 2 - Non-VPN App Classification",
+        stage_name=f"Stage 2 - {label1} Business Classification",
     )
 
-    model_path = os.path.join(report_dir, "stage2_nonvpn_expert.pth")
+    model_path = os.path.join(report_dir, f"stage2_{label1_slug}_expert.pth")
     torch.save(model.state_dict(), model_path)
     print(f"Saved model weights to: {model_path}")
 
 
 if __name__ == "__main__":
-    run_stage2_nonvpn()
+    args = parse_args()
+    run_stage2(label1=args.label1, epochs=args.epochs, batch_size=args.batch_size)
